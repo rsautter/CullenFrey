@@ -14,8 +14,7 @@ Python implementation of Cullen and Frey space based on fitdistrplus package.
     cullenFrey.cullenFrey(data,plotData=True,resample=True)
     plt.show()
   
-
-![alt text](https://github.com/rsautter/CullenFrey/blob/master/Figures/example.png)
+<img src="https://github.com/rsautter/CullenFrey/blob/main/Figures/example.png" width=60% height=60%>
 
 ## Requirements
   

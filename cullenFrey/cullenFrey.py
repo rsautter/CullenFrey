@@ -1,9 +1,8 @@
 import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
-from matplotlib.patches import Polygon
 
-def cullenFrey(data=np.random.rand(100000),plotData=False,resample=False,samplePercentage=0.85,npoints=10000):
+def cullenFrey(data=np.random.rand(100000),plotData=False,resample=False,samplePercentage=0.85,npoints=10000,label='Sample'):
   '''
   Cullen-Frey plot
   --------------------------------------------------
@@ -70,18 +69,18 @@ def cullenFrey(data=np.random.rand(100000),plotData=False,resample=False,sampleP
   plt.scatter([0],[9/5],s=100,label='Uniform',marker='^',color='k')
   plt.scatter([4],[9],s=100,label='Exponential',marker='s',color='k')
   plt.scatter([0],[4.2],s=100,label='Logistic',marker='+',color='k')
-  plt.legend()
   plt.xlabel(r"Skewness$^2$",fontsize=15)
   plt.ylabel(r"Kurtosis (Pearson)",fontsize=15)
   plt.title("Cullen and Frey",fontsize=17)
   
   if plotData:
   	plt.plot(skew, kurt,marker = '.', color='blue')
-  	plt.plot(np.average(skew),np.average(kurt),marker = '.', color='red')
+  	plt.plot(np.average(skew),np.average(kurt),marker = '.', color='red',label=label)
 
   plt.xlim(-0.25,skewmax+1)
   plt.ylim(0,kurtmax+1)
   plt.gca().invert_yaxis()
+  plt.legend()
 
 
 if __name__ == '__main__':
